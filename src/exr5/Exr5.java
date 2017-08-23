@@ -5,6 +5,8 @@
  */
 package exr5;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author 11944413600
@@ -15,7 +17,12 @@ public class Exr5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        JanelaImposto janela = new JanelaImposto();
+        janela.setSize(300,300);
+        janela.setLocationRelativeTo(null);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setVisible(true);
     }
     
 }
