@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -46,10 +47,19 @@ public class JanelaImposto extends JFrame{
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            Double valorDolar=0.0,valorProd=0.0;
+            try {
+                valorProd = Double.parseDouble(valor.getText());
+            } catch (NumberFormatException ev) {
+                System.out.println(ev);
+                JOptionPane.showMessageDialog(null,"Valor do Valor(USD) invalido","Error",2);
+            }
+            try {
+                valorDolar = Double.parseDouble(cotacao.getText());
+            } catch (NumberFormatException ev) {
+                JOptionPane.showMessageDialog(null,"Valor da cotacao invalido","Error",2);
+            }
             
-            Double valorProd = Double.parseDouble(valor.getText());
-            
-            Double valorDolar = Double.parseDouble(cotacao.getText());
             
             Double total = valorDolar*valorProd;
             
