@@ -65,12 +65,12 @@ public class JanelaImposto extends JFrame{
             
             if(tributado.isSelected()){
                 total=total+(total*0.6);
-                
+                if(icms.isSelected()){
+                    total=total+(total*0.18);
+                }
             }
             
-            if(icms.isSelected()){
-                total=total+(total*0.18);
-            }
+            
             
             result.setText("Total: "+total);
             
